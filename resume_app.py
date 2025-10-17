@@ -8,8 +8,8 @@ import PyPDF2
 @st.cache_data(show_spinner=False)
 def load_model_and_vectorizer():
     try:
-        model = joblib.load(r"E:\Gourav\Internship\Veridia\ResumeClassifier\resume_classifier.pkl")
-        tfidf = joblib.load(r"E:\Gourav\Internship\Veridia\ResumeClassifier\tfidf_vectorizer.pkl")
+        model = joblib.load("resume_classifier.pkl")
+        tfidf = joblib.load("tfidf_vectorizer.pkl")
         return model, tfidf
     except FileNotFoundError:
         st.error("Error: Model or vectorizer file not found.")
